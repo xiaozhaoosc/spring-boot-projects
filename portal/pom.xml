@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>parent</artifactId>
+        <groupId>com.kenzh</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../parent/pom.xml</relativePath>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.kenzh.web</groupId>
+
     <artifactId>portal</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>portal</name>
     <description>web project for Spring Boot</description>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.3.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -40,6 +39,42 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.kenzh</groupId>-->
+            <!--<artifactId>service-core</artifactId>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>com.kenzh</groupId>
+            <artifactId>generator-core</artifactId>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>io.springfox</groupId>-->
+            <!--<artifactId>springfox-swagger2</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>io.springfox</groupId>-->
+            <!--<artifactId>springfox-swagger-ui</artifactId>-->
+        <!--</dependency>-->
+        <!-- Spring Boot LayWeb 依赖 -->
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba</groupId>-->
+            <!--<artifactId>LayWeb-spring-boot-starter</artifactId>-->
+        <!--</dependency>-->
+        <!-- MySQL 连接驱动依赖 -->
+        <!--<dependency>-->
+            <!--<groupId>mysql</groupId>-->
+            <!--<artifactId>mysql-connector-java</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-logging</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>

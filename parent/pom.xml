@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.kenzh</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+
+    <name>parent</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>../portal</module>
+        <module>../service-core</module>
+        <module>../generator-core</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.3.RELEASE</version>
+        <!--<relativePath></relativePath> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+    </parent>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <me.version>1.0.0-SNAPSHOT</me.version>
+        <service-core.version>1.0.0-SNAPSHOT</service-core.version>
+        <generator-core.version>1.0.0-SNAPSHOT</generator-core.version>
+        <LayWeb.spring.boot>1.1.5</LayWeb.spring.boot>
+        <mysql-connector>5.1.39</mysql-connector>
+        <mybatis-plus.version>2.1.8</mybatis-plus.version>
+        <beetl.version>2.7.15</beetl.version>
+        <swagger.version>2.2.2</swagger.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.kenzh</groupId>
+                <artifactId>service-core</artifactId>
+                <version>${service-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kenzh</groupId>
+                <artifactId>generator-core</artifactId>
+                <version>${generator-core.version}</version>
+            </dependency>
+            <!-- Spring Boot LayWeb 依赖 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>LayWeb-spring-boot-starter</artifactId>
+                <version>${LayWeb.spring.boot}</version>
+            </dependency>
+            <!-- MySQL 连接驱动依赖 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ibeetl</groupId>
+                <artifactId>beetl</artifactId>
+                <version>${beetl.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>2.0.3.RELEASE</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
